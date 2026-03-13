@@ -53,11 +53,10 @@ sudo ip6tables -A INPUT -p udp --dport 5353 -d ff02::fb -j ACCEPT
 Sau khi setup xong các rule, bạn cần chặn các kết nối ngoài rule trên chain `INPUT` và `FORWARD` về `DROP`.<br>
 Chain `OUTPUT` không cần phải thay đổi
 ````
-sudo iptables -P INPUT DROP
-sudo iptables -P FORWARD DROP
-
-sudo ip6tables -P INPUT DROP
-sudo ip6tables -P FORWARD DROP
+sudo iptables -P INPUT DROP && sudo iptables -P FORWARD DROP
+````
+````
+sudo ip6tables -P INPUT DROP && sudo ip6tables -P FORWARD DROP
 ````
 
 ## 4. Lưu rule
