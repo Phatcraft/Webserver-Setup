@@ -20,8 +20,7 @@ Setup sẽ thực hiện trên cả `iptables` và `ip6tables`
 Để server có thể thực hiện các hoạt động cơ bản (ping ra bên ngoài, tải package, ...), bạn cần setup cho firewall cho phép.<br>
 + Setup cho `lo` interface
 ````
-sudo iptables -A INPUT -i lo -j ACCEPT
-sudo ip6tables -A INPUT -i lo -j ACCEPT
+sudo iptables -A INPUT -i lo -j ACCEPT && sudo ip6tables -A INPUT -i lo -j ACCEPT
 ````
 + Các kết nối có trạng thái `ESTABLISHED`,`RELATED` sẽ được firewall cho phép.
 ````
