@@ -38,9 +38,9 @@ echo "OK"
 
 printf "Setting up rule chain: "
 sudo iptables -P INPUT DROP
-sudo iptables -P OUTPUT DROP
+sudo iptables -P FORWARD DROP
 sudo ip6tables -P INPUT DROP
-sudo ip6tables -P OUTPUT DROP
+sudo ip6tables -P FORWARD DROP
 echo "OK"
 
 printf "Saving rules: "
