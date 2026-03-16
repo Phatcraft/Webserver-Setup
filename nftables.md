@@ -51,7 +51,7 @@ Hướng dẫn cụ thể:
 > Setup này đều áp dụng cho cả IPv4 và IPv6
 
 ## 3. Xem hoạt động của firewall
-Do có đặt tham số `counter`, nên chúng ta có thể xem các package đã qua firewall
+Do có đặt tham số `counter`, nên chúng ta có thể xem số gói tin đã qua firewall
 ````
 sudo nft list chain inet filter input
 ````
