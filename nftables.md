@@ -20,13 +20,13 @@ table inet filter {
 		type filter hook input priority filter;
 		policy drop;
 
-		iif lo counter accept
-		ct state established,related counter accept
-		icmpv6 type nd-router-advert counter accept
+		iif lo counter accept							# Loopback
+		ct state established,related counter accept		# Established, related connections
+		icmpv6 type nd-router-advert counter accept		# IPv6
 
-		tcp dport 22 counter accept
-		udp dport 5353 counter accept
-		tcp dport 445 counter accept
+		tcp dport 22 counter accept						# SSH
+		udp dport 5353 counter accept					# mDNS
+		tcp dport 445 counter accept					# Samba
 	}
 	chain forward {
 		type filter hook forward priority filter;
