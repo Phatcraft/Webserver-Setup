@@ -5,8 +5,14 @@ ServerTokens Prod
 ServerSignature Off
 FileETag none
 ````
-
- ### + 2. Setup Header
+ ### + 2. Setup <LimitExcept>
+ Thêm đoạn này vào `<Directory>` trong `apache2.conf`
+ ````
+ <LimitExcept GET POST HEAD>
+   deny from all
+ </LimitExcept>
+ ````
+ ### + 3. Setup Header
    + Cookies
 ````
 Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
