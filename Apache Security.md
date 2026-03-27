@@ -1,5 +1,5 @@
 # Apache Security
- ### + 1. Ẩn tên server & Etag tại `apache2.conf`
+ ### + 1. Ẩn tên server & Etag tại `apache2.conf` và `/etc/apache2/conf-available/security.conf`
 ````
 ServerTokens Prod
 ServerSignature Off
