@@ -33,7 +33,7 @@ add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
 ````
 
 ## + Setup giới hạn các method có thể thực hiện
-Setup ngăn chặn các method ngoài `GET`, `POST`, `HEAD` trong nginx config
+Setup ngăn chặn các method ngoài `GET`, `POST`, `HEAD` tại default site
 ````
 location / {
     limit_except GET POST HEAD {
