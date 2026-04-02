@@ -1,9 +1,16 @@
+# Setup NGINX cơ bản
+
+## Setup server
 ````
 # Server config
 server_tokens off;
 etag off;
 autoindex off;
+````
 
+## Setup Header
+Setup header tại default site
+````
 # Headers
 add_header X-Frame-Options "SAMEORIGIN" always;
 add_header X-Content-Type-Options "nosniff" always;
@@ -23,4 +30,14 @@ frame-ancestors 'self';
 " always;
 
 add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+````
+
+## Setup giới hạn các method có thể thực hiện
+Setup ngăn chặn các method ngoài `GET`, `POST`, `HEAD` trong nginx config
+````
+location / {
+    limit_except GET POST HEAD {
+        deny all;
+    }
+}
 ````
